@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,22 @@ namespace AutoClicker
         {
             InitializeComponent();
         }
+        [DllImport("user32.dll")]
 
+        static extern void mouse_event(int dwflags, int dx, int dy, int dwdata, int dwextrainfo);
+
+        public enum mouseeventflags
+        {
+            LeftDown = 2,
+            LeftUp = 4,
+        }
+
+        public void leftclick(Point P)
+        {
+            mouse_event((int)(mouseeventflags.LeftDown), P.X, P.Y, 0, 0);
+            mouse_event((int)(mouseeventflags.LeftUp), P.X, P.Y, 0, 0);
+        }
+        bool stop = true;
         private void Button1_Click(object sender, EventArgs e)
         {
 
@@ -30,11 +46,23 @@ namespace AutoClicker
             {
                 button1.Text = text1;
             }
+
+            stop = (stop) ? false : true;
+            timer1.Interval = (int)numericUpDown1.Value;
+            timer1.Enabled = true;
+            if (!stop) timer1.Start();
+            if (stop) timer1.Stop();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             button1.Text = "Start";
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            leftclick(new Point(MousePosition.X, MousePosition.Y));
         }
     }
 }
