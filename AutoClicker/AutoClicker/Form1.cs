@@ -15,6 +15,7 @@ namespace AutoClicker
     {
         String text1 = "Start";
         String text2 = "Stop";
+        int interval;
         public Form1()
         {
             InitializeComponent();
@@ -46,9 +47,10 @@ namespace AutoClicker
             {
                 button1.Text = text1;
             }
-
+            interval = (int)numericUpDown1.Value;
+            interval = interval * 1000;
             stop = (stop) ? false : true;
-            timer1.Interval = (int)numericUpDown1.Value;
+            timer1.Interval = interval;
             timer1.Enabled = true;
             if (!stop) timer1.Start();
             if (stop) timer1.Stop();
