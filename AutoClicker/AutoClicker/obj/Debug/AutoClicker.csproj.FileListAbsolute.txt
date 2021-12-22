@@ -1,7 +1,6 @@
 D:\coding\visual studio project\AutoClicker\AutoClicker\AutoClicker\bin\Debug\AutoClicker.exe.config
 D:\coding\visual studio project\AutoClicker\AutoClicker\AutoClicker\bin\Debug\AutoClicker.exe
 D:\coding\visual studio project\AutoClicker\AutoClicker\AutoClicker\bin\Debug\AutoClicker.pdb
-D:\coding\visual studio project\AutoClicker\AutoClicker\AutoClicker\obj\Debug\AutoClicker.csprojAssemblyReference.cache
 D:\coding\visual studio project\AutoClicker\AutoClicker\AutoClicker\obj\Debug\AutoClicker.Form1.resources
 D:\coding\visual studio project\AutoClicker\AutoClicker\AutoClicker\obj\Debug\AutoClicker.Properties.Resources.resources
 D:\coding\visual studio project\AutoClicker\AutoClicker\AutoClicker\obj\Debug\AutoClicker.csproj.GenerateResource.cache
