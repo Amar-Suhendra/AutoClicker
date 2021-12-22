@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{30981D01-6C46-4547-927D-4C163BA204DE}</ProjectGuid>
+    <ProjectGuid>{A3FD6F37-6296-4D81-BE7F-3E408339C0E9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>AutoClicker</RootNamespace>
     <AssemblyName>AutoClicker</AssemblyName>
