@@ -38,7 +38,7 @@ namespace AutoClicker
         bool stop = true;
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            
             if (button1.Text == text1)
             {
                 button1.Text = text2;
@@ -48,12 +48,20 @@ namespace AutoClicker
                 button1.Text = text1;
             }
             interval = (int)numericUpDown1.Value;
-            interval = interval * 1000;
+            interval *= 1000;
             stop = (stop) ? false : true;
             timer1.Interval = interval;
             timer1.Enabled = true;
-            if (!stop) timer1.Start();
-            if (stop) timer1.Stop();
+            if (!stop)
+            {
+                timer1.Start();
+                numericUpDown1.Enabled = false;
+            }
+            if (stop)
+            {
+                timer1.Stop();
+                numericUpDown1.Enabled = true;
+            }
 
         }
 
