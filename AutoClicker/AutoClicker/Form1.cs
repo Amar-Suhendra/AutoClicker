@@ -24,55 +24,62 @@ namespace AutoClicker
 
         static extern void mouse_event(int dwflags, int dx, int dy, int dwdata, int dwextrainfo);
 
-        public enum mouseeventflags
+        public enum Mouseeventflags
         {
             LeftDown = 2,
             LeftUp = 4,
         }
 
-        public void leftclick(Point P)
+        public void Leftclick(Point P)
         {
-            mouse_event((int)(mouseeventflags.LeftDown), P.X, P.Y, 0, 0);
-            mouse_event((int)(mouseeventflags.LeftUp), P.X, P.Y, 0, 0);
+            mouse_event((int)(Mouseeventflags.LeftDown), P.X, P.Y, 0, 0);
+            mouse_event((int)(Mouseeventflags.LeftUp), P.X, P.Y, 0, 0);
         }
         bool stop = true;
         private void Button1_Click(object sender, EventArgs e)
         {
             
-            if (button1.Text == text1)
+             if ( numericUpDown1.Value == 0 )
             {
-                button1.Text = text2;
+                error.Text = "Min 1 CPS";
             }
             else
             {
-                button1.Text = text1;
+                error.Text = "";
+                if (button1.Text == text1)
+                {
+                    button1.Text = text2;
+                }
+                else
+                {
+                    button1.Text = text1;
+                }
+                interval = (int)numericUpDown1.Value;
+                interval *= 1000;
+                stop = (stop) ? false : true;
+                timer1.Interval = interval;
+                timer1.Enabled = true;
+                if (!stop)
+                {
+                    timer1.Start();
+                    numericUpDown1.Enabled = false;
+                }
+                if (stop)
+                {
+                    timer1.Stop();
+                    numericUpDown1.Enabled = true;
+                }
             }
-            interval = (int)numericUpDown1.Value;
-            interval *= 1000;
-            stop = (stop) ? false : true;
-            timer1.Interval = interval;
-            timer1.Enabled = true;
-            if (!stop)
-            {
-                timer1.Start();
-                numericUpDown1.Enabled = false;
-            }
-            if (stop)
-            {
-                timer1.Stop();
-                numericUpDown1.Enabled = true;
-            }
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            button1.Text = "Start";
+            button1.Text = text1;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            leftclick(new Point(MousePosition.X, MousePosition.Y));
+            Leftclick(new Point(MousePosition.X, MousePosition.Y));
         }
     }
 }
