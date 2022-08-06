@@ -39,6 +39,7 @@
             this.leftClickRbt = new System.Windows.Forms.RadioButton();
             this.rightClickRbt = new System.Windows.Forms.RadioButton();
             this.error = new System.Windows.Forms.Label();
+            this.error2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,16 +123,30 @@
             // 
             this.error.AutoSize = true;
             this.error.ForeColor = System.Drawing.Color.Red;
-            this.error.Location = new System.Drawing.Point(162, 96);
+            this.error.Location = new System.Drawing.Point(147, 100);
             this.error.Name = "error";
-            this.error.Size = new System.Drawing.Size(0, 13);
+            this.error.Size = new System.Drawing.Size(57, 13);
             this.error.TabIndex = 9;
+            this.error.Text = "Min 1 CPS";
+            this.error.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // error2
+            // 
+            this.error2.AutoSize = true;
+            this.error2.ForeColor = System.Drawing.Color.Red;
+            this.error2.Location = new System.Drawing.Point(101, 80);
+            this.error2.Name = "error2";
+            this.error2.Size = new System.Drawing.Size(145, 13);
+            this.error2.TabIndex = 10;
+            this.error2.Text = "Choose left click or right click";
+            this.error2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 211);
+            this.Controls.Add(this.error2);
             this.Controls.Add(this.error);
             this.Controls.Add(this.rightClickRbt);
             this.Controls.Add(this.leftClickRbt);
@@ -162,6 +177,7 @@
         private System.Windows.Forms.RadioButton leftClickRbt;
         private System.Windows.Forms.RadioButton rightClickRbt;
         private System.Windows.Forms.Label error;
+        private System.Windows.Forms.Label error2;
     }
 }
 

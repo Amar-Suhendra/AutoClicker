@@ -24,21 +24,31 @@ namespace AutoClicker
 
         static extern void mouse_event(int dwflags, int dx, int dy, int dwdata, int dwextrainfo);
 
-        public enum Mouseeventflags
-        {
-            LeftDown = 2,
-            LeftUp = 4,
-        }
-
         public void Leftclick(Point P)
         {
-            mouse_event((int)(Mouseeventflags.LeftDown), P.X, P.Y, 0, 0);
-            mouse_event((int)(Mouseeventflags.LeftUp), P.X, P.Y, 0, 0);
+            mouse_event(0x0002, P.X, P.Y, 0, 0);
+            mouse_event(0x0004, P.X, P.Y, 0, 0);
         }
+
+        public void Rightclick(Point P)
+        {
+            mouse_event(0x0008, P.X, P.Y, 0, 0);
+            mouse_event(0x0010, P.X, P.Y, 0, 0);
+        }
+
         bool stop = true;
         private void Button1_Click(object sender, EventArgs e)
         {
             
+            if(rightClickRbt.Checked == false && leftClickRbt.Checked == false)
+            {
+                error2.Text = "Choose left click or right click";
+            }
+            else
+            {
+                error2.Text = "click true";
+            }
+
              if ( numericUpDown1.Value == 0 )
             {
                 error.Text = "Min 1 CPS";
@@ -75,11 +85,13 @@ namespace AutoClicker
         private void Form1_Load(object sender, EventArgs e)
         {
             button1.Text = text1;
+            error.Text = "";
+            error2.Text = "";
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            Leftclick(new Point(MousePosition.X, MousePosition.Y));
+            Rightclick(new Point(MousePosition.X, MousePosition.Y));
         }
     }
 }
