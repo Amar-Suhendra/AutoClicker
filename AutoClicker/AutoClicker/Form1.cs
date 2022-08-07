@@ -16,6 +16,8 @@ namespace AutoClicker
         String text1 = "Start";
         String text2 = "Stop";
         int interval;
+        int button;
+        bool stop = true;
         public Form1()
         {
             InitializeComponent();
@@ -36,48 +38,67 @@ namespace AutoClicker
             mouse_event(0x0010, P.X, P.Y, 0, 0);
         }
 
-        bool stop = true;
+        public int Mousebt()
+        {
+            if (rightClickRbt.Checked == true)
+            {
+                button = 0;
+            }else if (leftClickRbt.Checked == true)
+            {
+                button = 1;
+            }
+            else
+            {
+                button = 2;
+            }
+
+            return button;
+        }
+
         private void Button1_Click(object sender, EventArgs e)
         {
-            
-            if(rightClickRbt.Checked == false && leftClickRbt.Checked == false)
+
+            if (Mousebt() == 2)
             {
                 error2.Text = "Choose left click or right click";
             }
             else
             {
-                error2.Text = "click true";
-            }
-
-             if ( numericUpDown1.Value == 0 )
-            {
-                error.Text = "Min 1 CPS";
-            }
-            else
-            {
-                error.Text = "";
-                if (button1.Text == text1)
+                error2.Text = "";
+                if (numericUpDown1.Value == 0)
                 {
-                    button1.Text = text2;
+                    error.Text = "Min 1 CPS";
                 }
                 else
                 {
-                    button1.Text = text1;
-                }
-                interval = (int)numericUpDown1.Value;
-                interval *= 1000;
-                stop = (stop) ? false : true;
-                timer1.Interval = interval;
-                timer1.Enabled = true;
-                if (!stop)
-                {
-                    timer1.Start();
-                    numericUpDown1.Enabled = false;
-                }
-                if (stop)
-                {
-                    timer1.Stop();
-                    numericUpDown1.Enabled = true;
+                    error.Text = "";
+                    if (button1.Text == text1)
+                    {
+                        button1.Text = text2;
+                    }
+                    else
+                    {
+                        button1.Text = text1;
+                    }
+                    interval = (int)numericUpDown1.Value;
+                    interval *= 1000;
+                    stop = (stop) ? false : true;
+                    timer1.Interval = interval;
+                    timer1.Enabled = true;
+                    if (!stop)
+                    {
+                        timer1.Start();
+                        numericUpDown1.Enabled = false;
+                        rightClickRbt.Enabled = false;
+                        leftClickRbt.Enabled = false;
+                    }
+                    if (stop)
+                    {
+                        timer1.Stop();
+                        numericUpDown1.Enabled = true;
+                        rightClickRbt.Enabled = true;
+                        leftClickRbt.Enabled = true;
+                    }
                 }
             }
         }
@@ -91,7 +112,7 @@ namespace AutoClicker
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            Rightclick(new Point(MousePosition.X, MousePosition.Y));
+            Leftclick(new Point(MousePosition.X, MousePosition.Y));
         }
     }
 }
