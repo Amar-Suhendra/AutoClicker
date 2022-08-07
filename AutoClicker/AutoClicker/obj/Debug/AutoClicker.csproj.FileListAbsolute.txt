@@ -7,4 +7,3 @@ D:\coding\visual studio project\AutoClicker\AutoClicker\AutoClicker\obj\Debug\Au
 D:\coding\visual studio project\AutoClicker\AutoClicker\AutoClicker\obj\Debug\AutoClicker.csproj.CoreCompileInputs.cache
 D:\coding\visual studio project\AutoClicker\AutoClicker\AutoClicker\obj\Debug\AutoClicker.exe
 D:\coding\visual studio project\AutoClicker\AutoClicker\AutoClicker\obj\Debug\AutoClicker.pdb
-D:\coding\visual studio project\AutoClicker\AutoClicker\AutoClicker\obj\Debug\AutoClicker.csprojAssemblyReference.cache
