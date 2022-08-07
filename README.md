@@ -6,7 +6,7 @@ This application will perform an automatic left-click and right click according 
 
 ## Getting Started
 ### Download 
-Download the latest version from the [releases](https://github.com/Amar-Suhendra/AutoClicker/releases/tag/AutoClicker-v1.0.0) page.
+Download the latest version from the [releases](https://github.com/Amar-Suhendra/AutoClicker/releases) page.
 ### Executing Program
 * Unzip
 * Run AutoClicker.exe.
