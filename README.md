@@ -2,7 +2,7 @@
 AutoClicker is a desktop application for automating mouse clicks.
 
 # About
-This application will perform an automatic left-click according to the cursor position on the screen and will click according to the given interval (CPS). currently only supports Windows OS
+This application will perform an automatic left-click and right click according to the cursor position on the screen and will click according to the given interval (CPS). currently only supports Windows OS
 
 ## Getting Started
 ### Download 
