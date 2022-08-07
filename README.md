@@ -17,7 +17,8 @@ Download the latest version from the [releases](https://github.com/Amar-Suhendra
 ## Version History
 * v1.0.0
   - First release
-
+* v1.1.0
+  - Add feature to using right click
 ## License
 Anyone can copy but make sure to put the source<br> 
 All code in this repo is not for sale and purely for learning
