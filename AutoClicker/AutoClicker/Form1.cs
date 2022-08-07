@@ -112,7 +112,14 @@ namespace AutoClicker
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            Leftclick(new Point(MousePosition.X, MousePosition.Y));
+            if (button == 0)
+            {
+                Rightclick(new Point(MousePosition.X, MousePosition.Y));
+            }
+            else
+            {
+                Leftclick(new Point(MousePosition.X, MousePosition.Y));
+            }
         }
     }
 }
